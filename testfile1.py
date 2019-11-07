@@ -3,7 +3,7 @@ atkMod = input("What is your attack mod?")
 atkDie = input("What is your attack die?")
 atkDieCount = input("How many attack die?")
 while int(atkDieCount) >= 7:
-    print("You fucking cheater! You don't have that many attack die! Try again!")
+    print("You cheater! You don't have that many attack die! Try again!")
     atkDieCount = input("How many attack die?")
 atkDmgMod = input("What is your attack damage mod?")
 
