@@ -2,7 +2,7 @@ import random as r
 atkMod = input("What is your attack mod?")
 atkDie = input("What is your attack die?")
 atkDieCount = input("How many attack die?")
-while int(atkDieCount) >= 7:
+while int(atkDieCount) >= 9:
     print("You cheater! You don't have that many attack die! Try again!")
     atkDieCount = input("How many attack die?")
 atkDmgMod = input("What is your attack damage mod?")
@@ -59,6 +59,14 @@ while gameOn:
             atkDmgRoll6 = r.randint(1,int(atkDie))
             print("Your attack damage is:")
             print(int(atkDmgRoll1) + int(atkDmgRoll2) + int(atkDmgRoll3) + int(atkDmgRoll4) + int(atkDmgRoll5) + int(atkDmgRoll6) + int(atkDmgMod))
+        elif int(atkDieCount) is 7:
+            atkDmgRoll1 = r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie))
+            print("Your attack damage is:")
+            print(int(atkDmgRoll1) + int(atkDmgMod))
+        elif int(atkDieCount) is 8:
+            atkDmgRoll1 = r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie)) + r.randint(1,int(atkDie))
+            print("Your attack damage is:")
+            print(int(atkDmgRoll1) + int(atkDmgMod))
 
     elif int(actionCall) is 5:
         gameOn = False
