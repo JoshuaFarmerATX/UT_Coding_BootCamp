@@ -1,0 +1,12 @@
+def f(x):
+    return x**2 + 1
+    
+
+print(f(1))
+print(f(2))
+print(f(3))
+print(f(4))
+print(f(5))
+print(f(6))
+
+
