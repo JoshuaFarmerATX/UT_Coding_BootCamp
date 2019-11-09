@@ -1,4 +1,10 @@
 import random as r
+atkRoll = r.randint(1,20)
+gameOn = True
+atkSum = 0
+spellsAvailable = False
+
+
 atkMod = input("What is your attack mod?")
 atkDie = input("What is your attack die?")
 atkDieCount = input("How many attack die?")
@@ -6,14 +12,25 @@ atkDieCount = input("How many attack die?")
 #    print("You cheater! You don't have that many attack die! Try again!")
 #    atkDieCount = input("How many attack die?")
 atkDmgMod = input("What is your attack damage mod?")
+while spellsAvailable is False:
+    spellsAvailable = input("Would you like to add a spell? yes/no")
+    if spellsAvailable in {'y', 'Y', 'yes', 'YES'}:
+        spellName = input("What is your spell's name?")
+        spellAtk = input("What is your spell's attack bonus?")
+        spellDmg = input("What is your spell's damage die?")
+        spellDieCount = input("How many die?")
+        spellDmgMod = input("What is your spell's damage modifier?")
+    elif spellsAvailable in {'n', 'N', 'no', 'No'}:
+        break
+    else:
+        spellsAvailable = False
+        print("Invalid input. Type yes/no")
 
-atkRoll = r.randint(1,20)
-gameOn = True
-atkSum = 0
 while gameOn:
     print("""
     What would you like to do?
     1. ATTACK!!!
+    2. Cast my spell!!!
     5. End Game
     """)
     actionCall = input()
@@ -28,6 +45,20 @@ while gameOn:
         print("Your attack damage is:")
         print(atkSum + int(atkDmgMod))
         atkSum = 0
+    elif int(actionCall) is 2 and spellsAvailable in {'y', 'Y', 'yes', 'Yes', 'YES'}:
+        print("You cast " + spellName + "!")
+        atkRoll = r.randint(1,20)
+        print("Your attack roll is:")
+        print(atkRoll + int(spellAtk))
+        for i in range(int(spellDieCount)):
+            roll = r.randint(1, int(spellDmg))
+            atkSum = atkSum + roll
+#            print(roll)
+        print("Your attack damage is:")
+        print(atkSum + int(spellDmgMod))
+        atkSum = 0
+    elif int(actionCall) is 2 and spellsAvailable in {'n', 'N', 'No', 'no', 'NO'}:
+        print("You don't have a spell normie! try again!")
 #        if int(atkDieCount) is 1:
 #            atkDmgRoll = r.randint(1,int(atkDie))
 #            print("Your attack damage is:")
