@@ -20,6 +20,10 @@ def atk_Roll_Crit(fDie, fDieCount):
     print("Your attack damage is:")
     print(atkSum + int(atkDmgMod))
 
+print("""
+This simple app will help you with your character's attacks and your favorite spell!
+First, we need to get a little information about your character:
+""")
 atkMod = input("What is your attack mod?")
 atkDie = input("What is your attack die?")
 atkDieCount = input("How many attack die?")
