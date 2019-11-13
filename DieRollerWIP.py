@@ -43,13 +43,12 @@ while spellsAvailable is False:
         print("Invalid input. Type yes/no")
 
 while gameOn:
-    print("""
+    actionCall = input("""
     What would you like to do?
     1. ATTACK!!!
     2. Cast my spell!!!
     5. End Game
     """)
-    actionCall = input()
     if int(actionCall) is 1:
         atkRoll = r.randint(1,20)
         if int(atkRoll) is 1:
@@ -75,9 +74,6 @@ while gameOn:
             print("Your attack roll is:")
             print(atkRoll + int(atkMod))
             atk_Roll(spellAtk, spellDieCount)
-#        print("Your attack roll is:")
-#        print(atkRoll + int(spellAtk))
-#        atk_Roll(spellAtk, spellDieCount)
     elif int(actionCall) is 2 and spellsAvailable in {'n', 'N', 'No', 'no', 'NO'}:
         print("You don't have a spell normie! try again!")
     elif int(actionCall) is 5:
